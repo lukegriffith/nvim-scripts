@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo wrong script
+
 nvim --headless -c "luafile lazy-package-discovery.lua" -c "qa"
 
 cd ./pkg
@@ -11,7 +13,7 @@ csv_file="../nvim_plugins_list.txt"
 tail -n +1 "$csv_file" | while IFS=',' read -r package_name package_url
 do
   echo "Cloning $package_name from $package_url"
-  git clone "$package_url"
+  # git clone "$package_url"
 done
 
 

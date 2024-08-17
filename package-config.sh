@@ -2,6 +2,8 @@
 
 alias cfg='/usr/bin/git --git-dir=./bare_config --work-tree=./pkg/config'
 
+cfg fetch --all
+cfg pull
 
 tools=(
   "ansible-language-server"
@@ -37,7 +39,7 @@ docker run -it -v ./pkg/config/:/root/.config/nvim -v ./pkg/local/:/root/.local/
   -c "MasonInstall $formatted_tools"
   -c "qa"
 
-tar -czvf nvim-offline-deps.tar.gz local
+tar -czvf nvim-offline-deps.tar.gz pkg
 
 
 
