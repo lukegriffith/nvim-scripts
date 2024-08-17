@@ -1,3 +1,4 @@
 pkg/*
 nvim_plugins_list.txt
 nvim-offline-deps.tar.gz 
+local/*

@@ -1,3 +1,4 @@
 #!/bin/bash
-docker run -it -v ./config/:/home/nvim/.config/nvim nvim:latest
 
+docker run -it -v ./config/:/root/.config/nvim -v ./local/:/root/.local/ \
+  nvim:latest \

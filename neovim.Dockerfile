@@ -6,17 +6,17 @@ FROM alpine:3.20.2
 
 LABEL maintainer="Luke Griffith <me@lukegriffith.co.uk>"
 
-RUN apk add --no-cache neovim git curl editorconfig gcc make musl-dev
+RUN apk add --no-cache neovim git curl editorconfig gcc make musl-dev go npm python3
 
 
 # Add a new user and create a home directory
-RUN adduser -h /home/nvim -D nvim
 
-# Set the user to switch to
-USER nvim
+RUN mkdir /src
 
-# Set the working directory to the user's home
-WORKDIR /home/nvim
+
+
+WORKDIR /src
+
 
 ENTRYPOINT ["nvim"]
 CMD ["/src"]
