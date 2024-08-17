@@ -2,8 +2,7 @@ name: Build Container
 
 on:
   push:
-    tags:
-      - 'docker-*.*.*'
+    branches: [ main ]
 
 jobs:
   build:
@@ -33,3 +32,19 @@ jobs:
         registry: ghcr.io/${{ github.repository_owner }}
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}
+
+  package-upload:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/lukegriffith/nvim-scripts:main
+    needs: [ build ]
+    steps:
+      - name: Test NVIM
+        run: nvim --headless -c "lua print(1)" -c "qa"
+      - name: Package Config
+        run: bash /root/package-config.sh
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: nvim-offline-deps.tar.gz
+          path: nvim-offline-deps.tar.gz

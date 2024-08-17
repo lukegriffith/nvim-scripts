@@ -1,8 +1,5 @@
 #!/bin/bash
 
-/usr/bin/git --git-dir=./bare_config --work-tree=./pkg/config fetch --all
-/usr/bin/git --git-dir=./bare_config --work-tree=./pkg/config pull
-
 tools=(
   "ansible-language-server"
   "ansible-lint"
@@ -37,7 +34,7 @@ docker run -it -v ./pkg/config/:/root/.config/nvim -v ./pkg/local/:/root/.local/
   -c "MasonInstall $formatted_tools"
   -c "qa"
 
-tar -czvf nvim-offline-deps.tar.gz pkg
+tar -czvf nvim-offline-deps.tar.gz /root/.config/nvim /root/.local/{share,state}/nvim
 
 
 
