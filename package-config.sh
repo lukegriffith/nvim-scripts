@@ -27,7 +27,7 @@ formatted_tools=$(printf "%s " "${tools[@]}")
 echo $formatted_tools
 
 
-docker run -it -v ./config/:/root/.config/nvim -v ./local/:/root/.local/ \
+docker run -it -v ./pkg/config/:/root/.config/nvim -v ./pkg/local/:/root/.local/ \
   nvim:latest \
   --headless \
   -c "lua require('lazy').install()" \
