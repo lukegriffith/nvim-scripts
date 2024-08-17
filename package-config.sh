@@ -1,9 +1,7 @@
 #!/bin/bash
 
-alias cfg='/usr/bin/git --git-dir=./bare_config --work-tree=./pkg/config'
-
-cfg fetch --all
-cfg pull
+/usr/bin/git --git-dir=./bare_config --work-tree=./pkg/config fetch --all
+/usr/bin/git --git-dir=./bare_config --work-tree=./pkg/config pull
 
 tools=(
   "ansible-language-server"

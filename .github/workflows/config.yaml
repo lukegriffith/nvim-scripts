@@ -1,0 +1,16 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+    #tags:
+    #  - 'v*.*.*' 
+
+jobs:
+  container-test-job:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/lukegriffith/nvim-scripts:main
+    steps:
+      - name: Test NVIM
+        run: nvim --headless -c "lua print(1)" -c "qa"
+
