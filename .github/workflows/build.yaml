@@ -37,6 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/lukegriffith/nvim-scripts:main
+      options: --user nvim_user
     needs: [ build ]
     steps:
       - name: Test NVIM
