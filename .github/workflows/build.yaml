@@ -42,7 +42,7 @@ jobs:
       - name: Test NVIM
         run: nvim --headless -c "lua print(1)" -c "qa"
       - name: Package Config
-        run: sh /root/package-config.sh
+        run: bash /root/package-config.sh
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
