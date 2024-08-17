@@ -29,7 +29,7 @@ echo $formatted_tools
 nvim \
   --headless \
   -c "lua require('lazy').install()" \
-  -c "MasonInstall $formatted_tools"
+  -c "MasonInstall $formatted_tools" \
   -c "qa"
 
 tar -czvf nvim-offline-deps.tar.gz /root/.config/nvim /root/.local/{share,state}/nvim
