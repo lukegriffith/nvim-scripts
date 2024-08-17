@@ -36,7 +36,7 @@ nvim \
   -c "qa" \
   -V4
 
-tar -czvf nvim-offline-deps.tar.gz /home/github/.config/nvim /home/github/.local/{share,state}/nvim
+tar -czvf /home/github/nvim-offline-deps.tar.gz /home/github/.config/nvim /home/github/.local/{share,state}/nvim
 
 
 

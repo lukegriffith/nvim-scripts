@@ -48,4 +48,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: nvim-offline-deps.tar.gz
-          path: nvim-offline-deps.tar.gz
+          path: /home/github/nvim-offline-deps.tar.gz
