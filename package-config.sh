@@ -28,7 +28,6 @@ echo $formatted_tools
 
 nvim \
   --headless \
-  -c "lua require('lazy').install()" \
   -c "MasonInstall $formatted_tools" \
   -c "qa"
 
