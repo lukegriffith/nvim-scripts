@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir -p /github/home/bare_config /github/home/.config/nvim
-git clone --bare https://github.com/lukegriffith/kickstart.nvim /github/home/bare_config
-git --git-dir=/github/home/bare_config --work-tree=/github/home/.config/nvim pull
-git --git-dir=/github/home/bare_config --work-tree=/github/home/.config/nvim checkout -f
+mkdir -p /home/github/bare_config /home/github/.config/nvim
+git clone --bare https://github.com/lukegriffith/kickstart.nvim /home/github/bare_config
+git --git-dir=/home/github/bare_config --work-tree=/home/github/.config/nvim pull
+git --git-dir=/home/github/bare_config --work-tree=/home/github/.config/nvim checkout -f
 

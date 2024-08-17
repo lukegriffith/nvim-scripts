@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export HOME="/home/github"
+
 tools=(
   "ansible-language-server"
   "ansible-lint"
@@ -31,7 +33,7 @@ nvim \
   -c "MasonInstall $formatted_tools" \
   -c "qa"
 
-tar -czvf nvim-offline-deps.tar.gz /github/.config/nvim /github/.local/{share,state}/nvim
+tar -czvf nvim-offline-deps.tar.gz /home/github/.config/nvim /home/github/.local/{share,state}/nvim
 
 
 
