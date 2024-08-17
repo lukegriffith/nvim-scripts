@@ -1,5 +1,8 @@
 #!/bin/bash
 
+alias cfg='/usr/bin/git --git-dir=./bare_config --work-tree=./pkg/config'
+
+
 tools=(
   "ansible-language-server"
   "ansible-lint"
