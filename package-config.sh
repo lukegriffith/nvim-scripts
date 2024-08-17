@@ -26,9 +26,7 @@ formatted_tools=$(printf "%s " "${tools[@]}")
 
 echo $formatted_tools
 
-
-docker run -it -v ./pkg/config/:/root/.config/nvim -v ./pkg/local/:/root/.local/ \
-  nvim:latest \
+nvim \
   --headless \
   -c "lua require('lazy').install()" \
   -c "MasonInstall $formatted_tools"
