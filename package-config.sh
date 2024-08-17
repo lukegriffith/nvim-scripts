@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 export HOME="/home/github"
 
 tools=(
