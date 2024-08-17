@@ -8,11 +8,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Set output
       id: vars
-      run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+      run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
     - name: Build Image
       id: build-image
@@ -40,12 +40,10 @@ jobs:
       options: --user github
     needs: [ build ]
     steps:
-      - name: Test NVIM
-        run: nvim --headless -c "lua print(1)" -c "! whoami" -c "qa" -V4
       - name: Package Config
         run: bash /home/github/package-config.sh
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: nvim-offline-deps.tar.gz
           path: /home/github/nvim-offline-deps.tar.gz

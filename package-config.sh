@@ -33,8 +33,7 @@ echo $formatted_tools
 nvim \
   --headless \
   -c "MasonInstall $formatted_tools" \
-  -c "qa" \
-  -V4
+  -c "qa" 
 
 tar -czvf /home/github/nvim-offline-deps.tar.gz /home/github/.config/nvim /home/github/.local/{share,state}/nvim
 
