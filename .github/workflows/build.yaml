@@ -40,7 +40,7 @@ jobs:
     needs: [ build ]
     steps:
       - name: Test NVIM
-        run: nvim --headless -c "lua print(1)" -c "qa"
+        run: nvim --headless -c "lua print(1)" -c "! whoami" -c "qa"
       - name: Package Config
         run: bash /root/package-config.sh
       - name: Upload artifact
